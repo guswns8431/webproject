@@ -1,34 +1,33 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import Paper from '@material-ui/core/Paper';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Avatar from '@material-ui/core/Avatar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import Skeleton from '@material-ui/lab/Skeleton';
-import SearchIcon from '@material-ui/icons/Search';
-import { InputBase } from '@material-ui/core';
-import SimpleRating from './rating';
-
+import React from "react";
+import Button from "@material-ui/core/Button";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
+import Paper from "@material-ui/core/Paper";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+import PropTypes from "prop-types";
+import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardHeader from "@material-ui/core/CardHeader";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import Avatar from "@material-ui/core/Avatar";
+import Typography from "@material-ui/core/Typography";
+import IconButton from "@material-ui/core/IconButton";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
+import Skeleton from "@material-ui/lab/Skeleton";
+import SearchIcon from "@material-ui/icons/Search";
+import { InputBase } from "@material-ui/core";
+import SimpleRating from "./rating";
 
 const useStyles = makeStyles(theme => ({
   card: {
     maxWidth: 345,
-    margin: theme.spacing(2),
+    margin: theme.spacing(2)
   },
   media: {
-    height: 190,
-  },
+    height: 190
+  }
 }));
 
 function Media(props) {
@@ -55,8 +54,16 @@ function Media(props) {
             </IconButton>
           )
         }
-        title={loading ? <Skeleton height={10} width="80%" style={{ marginBottom: 6 }} /> : '웹 프로그래밍 기초'}
-        subheader={loading ? <Skeleton height={10} width="40%" /> : '웹쟁이 교수'}
+        title={
+          loading ? (
+            <Skeleton height={10} width="80%" style={{ marginBottom: 6 }} />
+          ) : (
+            "웹 프로그래밍 기초"
+          )
+        }
+        subheader={
+          loading ? <Skeleton height={10} width="40%" /> : "웹쟁이 교수"
+        }
       />
       {loading ? (
         <Skeleton variant="rect" className={classes.media} />
@@ -76,10 +83,7 @@ function Media(props) {
           </React.Fragment>
         ) : (
           <Typography variant="body2" color="textSecondary" component="p">
-            {
-              <SimpleRating />
-              
-            }
+            {<SimpleRating />}
           </Typography>
         )}
       </CardContent>
@@ -88,9 +92,8 @@ function Media(props) {
 }
 
 Media.propTypes = {
-  loading: PropTypes.bool,
+  loading: PropTypes.bool
 };
-
 
 export default function SimpleMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -109,11 +112,13 @@ export default function SimpleMenu() {
     setValue(newValue);
   };
 
-  
-
   return (
     <div>
-      <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+      <Button
+        aria-controls="simple-menu"
+        aria-haspopup="true"
+        onClick={handleClick}
+      >
         카르카
       </Button>
       <Menu
@@ -128,20 +133,20 @@ export default function SimpleMenu() {
         <MenuItem onClick={handleClose}>로그아웃</MenuItem>
       </Menu>
       <Paper square>
-      <Tabs
-        value={value}
-        indicatorColor="primary"
-        textColor="primary"
-        onChange={handleChange}
-        aria-label="disabled tabs example"
-      >
-        <Tab label="모든 강의" />        
-        <Tab label="내가 듣는 강의" />
-      </Tabs>
-    </Paper>
-    <InputBase placeholder="검색하기" />
-    <SearchIcon />
-    <Media loading />
+        <Tabs
+          value={value}
+          indicatorColor="primary"
+          textColor="primary"
+          onChange={handleChange}
+          aria-label="disabled tabs example"
+        >
+          <Tab label="모든 강의" />
+          <Tab label="내가 듣는 강의" />
+        </Tabs>
+      </Paper>
+      <InputBase placeholder="검색하기" />
+      <SearchIcon />
+      <Media loading />
       <Media />
     </div>
   );
