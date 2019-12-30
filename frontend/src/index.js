@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import Eval from "./Eval";
 import MyPage from "./MyPage";
 import { Login } from "./Login";
 import home from "./home";
