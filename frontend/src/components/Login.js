@@ -1,8 +1,9 @@
 import React from "react";
 import "./Login.css";
 import FadeTransition from "./fadeTransition";
+import { Link } from "react-router-dom";
 
-export class Login extends React.Component {
+export default class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = { isLoginOpen: true, isRegisterOpen: false };
@@ -87,14 +88,17 @@ class LoginBox extends React.Component {
               placeholder="Password"
             />
           </div>
-
+          {/* 
           <button
             type="button"
             className="login-btn"
             onClick={this.submitLogin.bind(this)}
           >
+            
             Login
           </button>
+          */}
+          <Link to="/home"> Login </Link>
         </div>
       </div>
     );

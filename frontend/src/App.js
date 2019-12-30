@@ -1,4 +1,25 @@
 import React from "react";
+import { Link, Route, BrowserRouter } from "react-router-dom";
+import Login from "./components/Login";
+import Home from "./home";
+
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <BrowserRouter>
+          <Route path="/" exact={true} component={Login} />
+          <Route path="/home" exact={true} component={Home} />
+        </BrowserRouter>
+      </div>
+    );
+  }
+}
+
+export default App;
+
+/*
+import React from "react";
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -151,3 +172,4 @@ export default function SimpleMenu() {
     </div>
   );
 }
+*/
