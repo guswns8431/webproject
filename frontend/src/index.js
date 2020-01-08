@@ -5,7 +5,7 @@ import App from "./App";
 import Eval from "./Eval";
 import MyPage from "./MyPage";
 import { Login } from "./Login";
-import  Home from "./Home";
+import  Home from "./home";
 import Router from "./Router";
 import * as serviceWorker from "./serviceWorker";
 
