@@ -5,11 +5,11 @@ import App from "./App";
 import Eval from "./Eval";
 import MyPage from "./MyPage";
 import { Login } from "./Login";
-import home from "./home";
+import  Home from "./Home";
 import Router from "./Router";
 import * as serviceWorker from "./serviceWorker";
 
-ReactDOM.render(<home/>, document.getElementById("root"));
+ReactDOM.render(<Home/>, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

@@ -10,7 +10,6 @@ import Menu from '@material-ui/core/Menu';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-
 //card
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -144,7 +143,7 @@ const useStyles = makeStyles(theme => ({
               <MenuIcon /> {/*왼쪽상단에있는 메뉴아이콘*/}
             </IconButton>
 
-            <Menu
+            <Menu  
               id="simple-menu"
               anchorEl={anchorEl}
               keepMounted
